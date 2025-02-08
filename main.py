@@ -22,23 +22,15 @@ if st.button("Submit") and search_query:
     placeholder.empty() 
     
     with st.spinner("Fetching search results... Please wait."):
-        # chrome_options = Options()
-        # chrome_options.add_argument("--headless")
-        # chrome_options.add_argument("--disable-gpu")
-        # chrome_options.add_argument("--no-sandbox")
-        # chrome_options.add_argument("--disable-dev-shm-usage")
-        # chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
-        # chrome_options.add_argument("--disable-blink-features=AutomationControlled")
         chrome_options = Options()
-        chrome_options.add_argument("--headless")  # Run without UI
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
-        
-        # ✅ Fix: Use the latest compatible ChromeDriver
-        service = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=chrome_options)
+        chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
-         
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
         driver.get("https://www.google.com/")
         
         search_box = WebDriverWait(driver, 10).until(
