@@ -38,7 +38,7 @@ if st.button("Submit") and search_query:
         service = Service(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=chrome_options)
 
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+         
         driver.get("https://www.google.com/")
         
         search_box = WebDriverWait(driver, 10).until(
