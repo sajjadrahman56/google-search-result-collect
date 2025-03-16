@@ -9,6 +9,10 @@ This **Streamlit app** uses **Selenium** to scrape search results from Google an
 - ⏳ **Spinner loading animation** while fetching results  
 - ♻️ **Reset button** to clear results and start a new search  
 
+
+![pag-11](https://github.com/user-attachments/assets/ab0861e5-a7fb-4356-bedd-655c2d1f6eea)
+
+
 ## 🛠️ Installation  
 
 Before running the app, ensure you have **Python 3.8+** installed.  
